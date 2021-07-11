@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, TextInput,  SafeAreaView, TouchableHighlight, View, Image } from 'react-native';
 
-import styles from '../Styles/global';
+import styles from '../Styles/globalStyles';
 
 //======================================FUNCTIONS======================================//
 
@@ -12,6 +12,11 @@ import styles from '../Styles/global';
     const goToCreateAccount = () =>{
         navigation.navigate('CreateAccount');
     }
+
+    const goToHomeScreen = () =>{
+        navigation.navigate('Tab');
+    }
+
     const HandlePress = () =>{
         console.log("The text has been clicked");
       }
@@ -33,7 +38,7 @@ import styles from '../Styles/global';
         placeholder={"Password"}
       />
 
-      <TouchableHighlight onPress={HandlePress}
+      <TouchableHighlight onPress={goToHomeScreen}
         activeOpacity={0.6}
         underlayColor="#FFF">
         <View style={styles.button}>
@@ -52,8 +57,6 @@ import styles from '../Styles/global';
     </SafeAreaView>
   );
 }
-
-
 
 
 

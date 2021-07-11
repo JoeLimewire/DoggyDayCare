@@ -12,13 +12,15 @@ export default  StyleSheet.create({
       backgroundColor: "#D90429",
       width:200,
       padding: 10,
+      margin:20,
       borderWidth: 0,
       borderRadius: 6,
       },
       buttonTitle: {
         color: "#FFF",
         fontSize: 20,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        
       },
       textHighlight:{
         color: "#D90429",

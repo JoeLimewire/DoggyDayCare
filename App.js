@@ -5,13 +5,19 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+
+
+import Tabs from './routes/tabs';
+
 import Navigator from './routes/Stack';
 
 const Stack = createStackNavigator();
 
 function App() {
   return (
-    <Navigator/>
+    <NavigationContainer>
+      <Navigator/>
+    </NavigationContainer>
   );
 }
 

@@ -1,19 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Dimensions } from 'react-native';
 import { StyleSheet, Text, TextInput,  SafeAreaView, TouchableHighlight, ScrollView, View, Image } from 'react-native';
 
-import styles from '../Styles/global';
+import styles from '../Styles/globalStyles';
 
  function CreateAccount({naviation}) {
-//======================================FUNCTIONS======================================//
+//======================================FUNCTIONS======================================//      
 
-    const HandlePress = () =>{
-        console.log("The text has been clicked");
-      }
+    const [petUI, setPetUI] = useState([{key: '', value: ''}]);
+
     const goToLoginScreen = () =>{
-         NavigationPreloadManager.navigate('Login');
-    }
+        NavigationPreloadManager.navigate('Login');
+   }
+   const HandlePress = () =>{
+       console.log("The text has been clicked");
+     }
+
+     const deleteHandler = (key)=>{
+        const petUIArray = petUI.filter((petUI,index) => index != key);
+        setPetUI(petUIArray);
+      }
+
+    const addPetUI = () =>{
+        console.log(petUI);
+        const petUIArray = [...petUI];
+        petUIArray.push({key:'',value:''});
+        setPetUI(petUIArray);
+    };
+
+
+
 //======================================VIEW======================================//
   return (
     <SafeAreaView style={localStyles.container}>
@@ -42,29 +59,56 @@ import styles from '../Styles/global';
             <TextInput style={styles.input} placeholder={"Address Line 3"}></TextInput>
 
             <View>
-                
-                <Text style={styles.subTitle}> Pet 1</Text>
-
+            
+            {petUI.map((input, key)=>(
+                <View key={key}>
+    
+                <Text style={styles.subTitle}>Pet {key}</Text>
+    
                 <Text style={styles.text}>Pet Name:</Text>
                 <TextInput style={styles.input} placeholder={"Name"}></TextInput>
-
+    
                 <Text style={styles.text}>Breed:</Text>
                 <TextInput style={styles.input} placeholder={"Breed"}></TextInput>
-
+    
                 <Text style={styles.text}>Age:</Text>
                 <TextInput style={styles.input} placeholder={"Age"} keyboardType={"number-pad"}></TextInput>
+    
+                <TouchableHighlight 
+                    onPress={() => deleteHandler(key)}
+                    activeOpacity={0.6}
+                    underlayColor="#FFF">
+                    
+                <View style={styles.button}>
+                    <Text style={styles.buttonTitle}>Remove Pet</Text>
+                </View>
+    
+                </TouchableHighlight>
+    
+                </View>
+            ))}
 
             </View>
            
             <View style={styles.container}>
                
                 <TouchableHighlight 
-                    onPress={HandlePress}
+                    onPress={() => setPetUI(addPetUI)}
                     activeOpacity={0.6}
                     underlayColor="#FFF">
                         
                     <View style={styles.button}>
                         <Text style={styles.buttonTitle}>Add Pet</Text>
+                    </View>
+                </TouchableHighlight>
+
+                <TouchableHighlight 
+                    onPress={HandlePress}
+                    activeOpacity={0.6}
+                    underlayColor="#FFF">
+                        
+                    <View style={styles.button}>
+                        <Text style={styles.buttonTitle}>Create Account!</Text>
                     </View>
                 </TouchableHighlight>
 
