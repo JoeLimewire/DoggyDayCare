@@ -31,8 +31,6 @@ const localStyles = StyleSheet.create({
   container:{
     backgroundColor:'blue',
     height: 100,
-    
-    
   },
   test:{
     flex:1,
