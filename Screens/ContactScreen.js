@@ -18,7 +18,7 @@ import styles from '../Styles/globalStyles';
       <Image source={require('../assets/logo.png')}/>
       
       <Text style={styles.title}>ContactScreen Screen </Text>
-
+      <Text> This is something</Text>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
