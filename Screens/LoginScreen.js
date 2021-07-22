@@ -26,7 +26,7 @@ import styles from '../Styles/globalStyles';
     <SafeAreaView style={styles.container}>
       <Image source={require('../assets/logo.png')}/>
       
-      <Text style={styles.title}>Doggy Day Care </Text>
+      <Text style={styles.title}>Darla's Day Care </Text>
       <TextInput
         style={styles.input}
         keyboardType={"email-address"}
@@ -43,6 +43,14 @@ import styles from '../Styles/globalStyles';
         underlayColor="#FFF">
         <View style={styles.button}>
           <Text style={styles.buttonTitle}>Login</Text>
+        </View>
+      </TouchableHighlight>
+
+      <TouchableHighlight onPress={goToHomeScreen}
+        activeOpacity={0.6}
+        underlayColor="#FFF">
+        <View style={{...styles.button, backgroundColor: "#ff82a6", width:300, padding:15}}>
+          <Text style={styles.buttonTitle}>Login with Google</Text>
         </View>
       </TouchableHighlight>
 

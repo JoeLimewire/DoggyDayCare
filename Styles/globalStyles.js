@@ -18,6 +18,13 @@ export default  StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    containerAlt: {
+      flex: 1,
+      backgroundColor: '#F3F4F7',
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+      width: windowWidth
+    },
 
     button:{
       alignItems: "center",
@@ -25,8 +32,7 @@ export default  StyleSheet.create({
       width:200,
       padding: 10,
       margin:20,
-      borderWidth: 0,
-      borderRadius: 6,
+
       },
       buttonTitle: {
         color: "#FFF",
@@ -49,7 +55,6 @@ export default  StyleSheet.create({
         backgroundColor:'#EDF2F4',
         padding:10,
         borderWidth: 0,
-        borderRadius: 6,
       },
 
       text:{
@@ -71,18 +76,20 @@ export default  StyleSheet.create({
         margin:20,
       },
       scrollFill:{
-        height:200
+        height:120
       },
 
       // Lists/ Scroll View
       card:{
-        backgroundColor: "pink",
-        flex:1,
-        width: windowWidth -40,
-        padding: 20,
-        margin:20,
-        borderRadius: 20,
-        alignItems:'center'
+        backgroundColor: "#F7CAD1",
+        alignItems: "flex-start",
+        paddingTop: 10,
+        paddingBottom: 10,
+        width: windowWidth,
+        marginTop:10,
+        alignItems:'center',
+       
+
       },
       cardContentView:{
         borderStyle: 'solid',
@@ -95,13 +102,13 @@ export default  StyleSheet.create({
       },
       cardContent:{
         borderStyle: 'solid',
-        width: windowWidth/1.3,
-        padding:10
+        width: windowWidth,
+        padding:20
       },
       cardImage:{
-        width:windowWidth/1.3,
+        width:windowWidth/1.1,
         height:500,
-        borderRadius:10,
+        
       },
       cardDate:{
         position:'absolute',

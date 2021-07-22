@@ -17,6 +17,7 @@ const Tabs = () =>{
     return(     
         <Tab.Navigator
         tabBarOptions={{
+            keyboardHidesTabBar: true,
             showLabel:false,
             style:{
                 position:'absolute',
@@ -24,10 +25,11 @@ const Tabs = () =>{
                 left:10,
                 right:10,
                
-                borderRadius:15,
+                borderRadius:5,
                 height:90,
             }
         }}
+        
         >
             <Tab.Screen name="Home" component={HomeScreen} options={{
                 tabBarIcon: ({focused}) => (
@@ -112,10 +114,11 @@ const localStyles = StyleSheet.create({
       backgroundColor: '#FFF',
       alignItems: 'center',
       justifyContent: 'center',
+      
     },
     image:{
-        width:25,
-        height:25
+        width:15,
+        height:15
     },
     text:{
         fontWeight: 'bold',

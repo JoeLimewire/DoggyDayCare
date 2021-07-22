@@ -20,7 +20,7 @@ import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/Deprecate
   return (
     <SafeAreaView style={styles.container}>
 
-      <ScrollView style={{flex:1, height: windowHeight}}>
+      <ScrollView style={{flex:1, height: windowHeight, backgroundColor:"#F3F4F7"}}>
         <View style={styles.card}>
         <Text style={styles.date}>
               18/6/21
@@ -34,6 +34,7 @@ import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/Deprecate
             <Text style={styles.cardContent}>
             In this episode, you will learn more about Ouroboros Farms, an aquaponics farm in the Bay Area that has been growing vegetables and fish for the past 7 years.  You will learn about some of their successes and failures as well as how they have designed their farm to educate people about aquaponics, but also produce a viable business model on how to generate cash flow from many different aspects of the farm besides just selling the vegetables and fish, which is what most farms do.
             </Text>    
+            
             <Image source={require('../assets/test.jpg')} style={styles.cardImage}/>
         </View>
 
