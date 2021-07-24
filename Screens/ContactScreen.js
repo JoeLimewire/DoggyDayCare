@@ -19,7 +19,6 @@ import styles from '../Styles/globalStyles';
     if(descnum > 255){
       setDnum(255);
     };
-    
   }
  
   const HandlePress = () =>{

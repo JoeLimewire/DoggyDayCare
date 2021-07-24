@@ -8,28 +8,44 @@ import styles from '../Styles/globalStyles';
 
  function CreateAccount({naviation}) {
 //======================================FUNCTIONS======================================//      
+    let petKey = 1;
+    const [petUI, setPetUI] = useState([{key:0, value: ''}]);
 
-    const [petUI, setPetUI] = useState([{key: '', value: ''}]);
     const [value, setValue] = React.useState(["1"+ petUI.key]);
+
+    const [CharNum, setCharNum] = React.useState([255]);
 
     const goToLoginScreen = () =>{
         NavigationPreloadManager.navigate('Login');
    }
    const HandlePress = () =>{
        console.log("The text has been clicked");
+       console.log("Pet UI : " + petUI.key);
      }
 
      const deleteHandler = (key)=>{
+         console.log(key);
         const petUIArray = petUI.filter((petUI,index) => index != key);
         setPetUI(petUIArray);
       }
 
     const addPetUI = () =>{
-        
+        console.log(petUI.key)
         const petUIArray = [...petUI];
-        petUIArray.push({key:'',value:''});
+        petUIArray.push({key:petUI.key+1,value:''});
         setPetUI(petUIArray);
     };
+
+    const changeCharNum = (e) => {
+        setCharNum(CharNum - 1);
+        if (e.key === "Backspace"){
+            setCharNum(CharNum + 1);
+        };
+        if(CharNum > 255){
+            setCharNum(255);
+        };
+      }
+     
 
 
 
@@ -76,10 +92,10 @@ import styles from '../Styles/globalStyles';
 
                 <Text style={styles.text}>Sex:</Text>
                 <TextInput style={styles.input} placeholder={"Breed"}></TextInput>
-
+                
                 <Text style={styles.text}>Picture:</Text>
                 <TextInput style={styles.input} placeholder={"Breed"}></TextInput>
-
+                
                 <Text style={styles.text}>Size:</Text>
                 <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
                 <View style={{flexDirection:"row",alignItems:'center'}}>              
@@ -90,7 +106,7 @@ import styles from '../Styles/globalStyles';
                         />                     
                   
                     <View style={{flex:1}}>
-                    <Text >0 - >15Kg</Text>
+                    <Text >0kg-14.9Kg</Text>
                     </View>
 
                     <RadioButton value={"2" + key}
@@ -99,7 +115,7 @@ import styles from '../Styles/globalStyles';
                         />                    
                     
                     <View style={{flex:1}}>
-                    <Text >0 - >15Kg</Text>
+                    <Text >15kg-24.9Kg</Text>
                     </View>
                     
                 </View>
@@ -111,7 +127,7 @@ import styles from '../Styles/globalStyles';
                         />                   
                     
                     <View style={{flex:1}}>
-                    <Text >0 - >15Kg</Text>
+                    <Text >25kg-39.5Kg</Text>
                     </View>
 
                     <RadioButton value={"4" + key}
@@ -120,25 +136,36 @@ import styles from '../Styles/globalStyles';
                         />                     
                     
                     <View style={{flex:1}}>
-                    <Text >0 - >15Kg</Text>
+                    <Text >40+kg</Text>
                     </View>
                     
                 </View>
-                </RadioButton.Group>
-                   
-                    
-                   
-                   
-                    
+                </RadioButton.Group>    
                 
-                <Text style={styles.text}>Breed:</Text>
+                <Text style={styles.text}>Date Of Birth:</Text>
                 <TextInput style={styles.input} placeholder={"Breed"}></TextInput>
 
-                <Text style={styles.text}>Breed:</Text>
+                <Text style={styles.text}>Are They Sterile?:</Text>
+                <TextInput style={styles.input} placeholder={"Breed"}></TextInput>
+
+                <Text style={styles.text}>Are They Vaccinated?:</Text>
                 <TextInput style={styles.input} placeholder={"Breed"}></TextInput>
     
                 <Text style={styles.text}>Age:</Text>
                 <TextInput style={styles.input} placeholder={"Age"} keyboardType={"number-pad"}></TextInput>
+
+                <Text style={styles.text}>Microchip Number:</Text>
+                <TextInput style={styles.input} placeholder={"Microchip Number"} keyboardType={"number-pad"}></TextInput>
+
+                <Text style={styles.text}>Behaviour Description :<Text style={{...styles.text, color: '#F77F00', alignSelf:'flex-end', paddingRight:20}}> {CharNum}</Text></Text>
+                <TextInput
+                    style={{...styles.input, height:200, textAlignVertical: "top"}}
+                    multiline = {true}
+                    maxLength = {255}
+                    onKeyPress= {({nativeEvent}) => changeCharNum(nativeEvent)}
+                    placeholder={"Please type here..."}
+                />
+                
     
                 <TouchableHighlight 
                     onPress={() => deleteHandler(key)}
@@ -146,7 +173,7 @@ import styles from '../Styles/globalStyles';
                     underlayColor="#FFF">
                     
                 <View style={styles.button}>
-                    <Text style={styles.buttonTitle}>Remove Pet</Text>
+                    <Text style={styles.buttonTitle}>Remove</Text>
                 </View>
     
                 </TouchableHighlight>
