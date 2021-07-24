@@ -24,7 +24,7 @@ const Tabs = () =>{
                 bottom:15,
                 left:10,
                 right:10,
-               
+                backgroundColor:'#FFF',
                 borderRadius:5,
                 height:90,
             }
@@ -37,9 +37,9 @@ const Tabs = () =>{
                         <Image 
                         source={require("../assets/home.png")}
                         resizeMode="contain"
-                        style={{tintColor: focused ? '#D90429' : '#333' }}
+                        style={{tintColor: focused ? '#F77F00' : '#003049' }}
                         />
-                        <Text style= {{color: focused ? '#D90429' : '#333', ...localStyles.text}} >HOME</Text>
+                        <Text style= {{color: focused ? '#F77F00' : '#003049', ...localStyles.text}} >HOME</Text>
                     </View>
                 ),
             }}/>
@@ -51,9 +51,9 @@ const Tabs = () =>{
                         <Image 
                         source={require("../assets/book.png")}
                         resizeMode="contain"
-                        style={{tintColor: focused ? '#D90429' : '#333' }}
+                        style={{tintColor: focused ? '#F77F00' : '#003049' }}
                         />
-                        <Text style= {{color: focused ? '#D90429' : '#333', ...localStyles.text}} >BOOKINGS</Text>
+                        <Text style= {{color: focused ? '#F77F00' : '#003049', ...localStyles.text}} >BOOKINGS</Text>
                     </View>
                 ),
             }}
@@ -63,7 +63,7 @@ const Tabs = () =>{
             options={{
                 tabBarIcon: ({focused}) => (
                     <View style={{
-                        backgroundColor: focused ? '#D90429' : '#333',
+                        backgroundColor: focused ? '#F77F00' : '#003049',
                         borderRadius:90,
                         }}>
                         <Image 
@@ -83,9 +83,9 @@ const Tabs = () =>{
                         <Image 
                         source={require("../assets/phone.png")}
                         resizeMode="contain"
-                        style={{tintColor: focused ? '#D90429' : '#333' }}
+                        style={{tintColor: focused ? '#F77F00' : '#003049' }}
                         />
-                        <Text style= {{color: focused ? '#D90429' : '#333', ...localStyles.text}} >CONTACT</Text>
+                        <Text style= {{color: focused ? '#F77F00' : '#003049', ...localStyles.text}} >CONTACT</Text>
                     </View>
                 ),
             }}
@@ -97,9 +97,9 @@ const Tabs = () =>{
                         <Image 
                         source={require("../assets/user.png")}
                         resizeMode="contain"
-                        style={{tintColor: focused ? '#D90429' : '#333', ...localStyles.Image }}
+                        style={{tintColor: focused ? '#F77F00' : '#003049', ...localStyles.Image }}
                         />
-                        <Text style= {{color: focused ? '#D90429' : '#333', ...localStyles.text}} >ACCOUNT</Text>
+                        <Text style= {{color: focused ? '#F77F00' : '#003049', ...localStyles.text}} >ACCOUNT</Text>
                     </View>
                 ),
             }}

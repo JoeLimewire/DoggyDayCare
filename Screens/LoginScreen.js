@@ -49,7 +49,7 @@ import styles from '../Styles/globalStyles';
       <TouchableHighlight onPress={goToHomeScreen}
         activeOpacity={0.6}
         underlayColor="#FFF">
-        <View style={{...styles.button, backgroundColor: "#ff82a6", width:300, padding:15}}>
+        <View style={{...styles.button, backgroundColor: "#D62828", width:300, padding:15}}>
           <Text style={styles.buttonTitle}>Login with Google</Text>
         </View>
       </TouchableHighlight>

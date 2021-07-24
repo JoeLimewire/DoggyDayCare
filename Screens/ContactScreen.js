@@ -30,24 +30,24 @@ import styles from '../Styles/globalStyles';
 //======================================VIEW======================================//
 
   return (
-    <SafeAreaView style={styles.containerAlt}>
+    <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.containerAlt}>
-          <Text style={styles.title}>Contact Us!</Text>
-          <Text style={styles.text}>You can email us here, or call us on: </Text>
-          <Text style={{...styles.text, color: "#D90429", fontWeight:"bold", fontSize:24}}>01234 567891</Text>
-          <Text style={styles.text}>Your Email: </Text>
+          <Text style={styles.titleAlt}>Contact Us!</Text>
+          <Text style={styles.textAlt}>You can email us here, or call us on: </Text>
+          <Text style={{...styles.text, color: "#F77F00", fontWeight:"bold", fontSize:24}}>01234 567891</Text>
+          <Text style={styles.textAlt}>Your Email: </Text>
           <TextInput
           style={styles.input}
           placeholder={"Email"}
           />
           
-            <Text style={styles.text}>Description:<Text style={{...styles.text, color: '#D90429', alignSelf:'flex-end', paddingRight:20}}> {descnum}</Text></Text>
+            <Text style={styles.textAlt}>Description:<Text style={{...styles.text, color: '#F77F00', alignSelf:'flex-end', paddingRight:20}}> {descnum}</Text></Text>
             
 
           
           <TextInput
-            style={{...styles.input, width:350, height:200, textAlignVertical: "top"}}
+            style={{...styles.input, height:200, textAlignVertical: "top"}}
             multiline = {true}
             maxLength = {255}
             onKeyPress= {({nativeEvent}) => changeCharNum(nativeEvent)}
@@ -56,10 +56,11 @@ import styles from '../Styles/globalStyles';
           <TouchableHighlight onPress={() => HandlePress()}
           activeOpacity={0.6}
           underlayColor="#FFF">
-          <View style={{...styles.button, width:100}}>
-            <Text style={styles.buttonTitle}>Send</Text>
-          </View>
+            <View style={{...styles.button, width:100}}>
+              <Text style={styles.buttonTitle}>Send</Text>
+            </View>      
           </TouchableHighlight>
+          <Text style={styles.subTextAlt}> Please wait 1-3 business days for a full response.</Text>
         </View>
         <View style={styles.scrollFill}/>
       </ScrollView>
