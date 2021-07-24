@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { Dimensions } from 'react-native';
 import { StyleSheet, Text, TextInput,  SafeAreaView, TouchableHighlight, ScrollView, View, Image } from 'react-native';
+import { RadioButton } from 'react-native-paper';
 
 import styles from '../Styles/globalStyles';
 
@@ -9,6 +10,7 @@ import styles from '../Styles/globalStyles';
 //======================================FUNCTIONS======================================//      
 
     const [petUI, setPetUI] = useState([{key: '', value: ''}]);
+    const [value, setValue] = React.useState(["1"+ petUI.key]);
 
     const goToLoginScreen = () =>{
         NavigationPreloadManager.navigate('Login');
@@ -23,7 +25,7 @@ import styles from '../Styles/globalStyles';
       }
 
     const addPetUI = () =>{
-        console.log(petUI);
+        
         const petUIArray = [...petUI];
         petUIArray.push({key:'',value:''});
         setPetUI(petUIArray);
@@ -53,13 +55,14 @@ import styles from '../Styles/globalStyles';
             <Text style={styles.text}>Password:</Text>
             <TextInput style={styles.input} placeholder={"Password"} secureTextEntry={true}></TextInput>
 
-            <Text style={styles.text}>Address:</Text>
+            <Text style={styles.text}>Phone Number:</Text>
+            <TextInput style={styles.input} placeholder={"Address Line 2"}></TextInput>
+            <Text style={styles.text}>Address</Text>
             <TextInput style={styles.input} placeholder={"Address Line 1"}></TextInput>
             <TextInput style={styles.input} placeholder={"Address Line 2"}></TextInput>
             <TextInput style={styles.input} placeholder={"Address Line 3"}></TextInput>
 
-            <View>
-            
+            <View >
             {petUI.map((input, key)=>(
                 <View key={key}>
     
@@ -68,6 +71,69 @@ import styles from '../Styles/globalStyles';
                 <Text style={styles.text}>Pet Name:</Text>
                 <TextInput style={styles.input} placeholder={"Name"}></TextInput>
     
+                <Text style={styles.text}>Breed:</Text>
+                <TextInput style={styles.input} placeholder={"Breed"}></TextInput>
+
+                <Text style={styles.text}>Sex:</Text>
+                <TextInput style={styles.input} placeholder={"Breed"}></TextInput>
+
+                <Text style={styles.text}>Picture:</Text>
+                <TextInput style={styles.input} placeholder={"Breed"}></TextInput>
+
+                <Text style={styles.text}>Size:</Text>
+                <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
+                <View style={{flexDirection:"row",alignItems:'center'}}>              
+                   
+                    <RadioButton value={"1" + key}
+                        
+                        color="#F77F00"
+                        />                     
+                  
+                    <View style={{flex:1}}>
+                    <Text >0 - >15Kg</Text>
+                    </View>
+
+                    <RadioButton value={"2" + key}
+                        
+                        color="#F77F00"
+                        />                    
+                    
+                    <View style={{flex:1}}>
+                    <Text >0 - >15Kg</Text>
+                    </View>
+                    
+                </View>
+                <View style={{flexDirection:"row",alignItems:'center'}}>              
+                   
+                    <RadioButton value={"3" + key}
+                        
+                        color="#F77F00"
+                        />                   
+                    
+                    <View style={{flex:1}}>
+                    <Text >0 - >15Kg</Text>
+                    </View>
+
+                    <RadioButton value={"4" + key}
+                        
+                        color="#F77F00"
+                        />                     
+                    
+                    <View style={{flex:1}}>
+                    <Text >0 - >15Kg</Text>
+                    </View>
+                    
+                </View>
+                </RadioButton.Group>
+                   
+                    
+                   
+                   
+                    
+                
+                <Text style={styles.text}>Breed:</Text>
+                <TextInput style={styles.input} placeholder={"Breed"}></TextInput>
+
                 <Text style={styles.text}>Breed:</Text>
                 <TextInput style={styles.input} placeholder={"Breed"}></TextInput>
     
