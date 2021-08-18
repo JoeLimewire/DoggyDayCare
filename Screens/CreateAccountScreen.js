@@ -45,17 +45,12 @@ import styles from '../Styles/globalStyles';
             setCharNum(255);
         };
       }
-     
-
-
 
 //======================================VIEW======================================//
   return (
     <SafeAreaView style={localStyles.container}>
         <ScrollView style={localStyles.scrollView}>
             <View style={styles.container}>
-                <Image source={require('../assets/logo.png')}/>
-
                 <Text style={styles.title}>Create Your Account</Text>
             </View>
 
@@ -80,11 +75,11 @@ import styles from '../Styles/globalStyles';
 
             <View >
             {petUI.map((input, key)=>(
-                <View key={key}>
+                <View key={key} >
+                <View style={{backgroundColor: '#003049', borderRadius:5}}>
+                <Text style={{...styles.subTitle, color:"#FFF"}}>Pet {key}</Text>
     
-                <Text style={styles.subTitle}>Pet {key}</Text>
-    
-                <Text style={styles.text}>Pet Name:</Text>
+                <Text style={styles.textAlt}>Pet Name:</Text>
                 <TextInput style={styles.input} placeholder={"Name"}></TextInput>
     
                 <Text style={styles.text}>Breed:</Text>
@@ -138,7 +133,6 @@ import styles from '../Styles/globalStyles';
                     <View style={{flex:1}}>
                     <Text >40+kg</Text>
                     </View>
-                    
                 </View>
                 </RadioButton.Group>    
                 
@@ -177,7 +171,8 @@ import styles from '../Styles/globalStyles';
                 </View>
     
                 </TouchableHighlight>
-    
+                </View>
+                
                 </View>
             ))}
 
